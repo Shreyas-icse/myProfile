@@ -1,62 +1,49 @@
-// Keyboard shortcut functions
+// ============================
+// KEYBOARD SHORTCUTS
+// ============================
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-}
+export function setupKeyboard() {
+  document.addEventListener("keydown", (e) => {
+    // avoid triggering inside input fields
+    const tag = document.activeElement.tagName.toLowerCase();
+    if (tag === "input" || tag === "textarea") return;
 
-function focusSearch() {
-    var searchBox = document.getElementById("project-search");
-    if (searchBox) {
-        searchBox.focus();
-    }
-}
-
-function scrollToTop() {
-    window.scrollTo(0, 0);
-}
-
-function goToProjects() {
-    window.location.href = "#projects";
-}
-function clearSearch() {
-    var search = document.getElementById("project-search");
-    if (search) {
-        search.value = "";
-    }
-}
-function goToExperience() {
-    window.location.href = "#experience";
-}
-
-// Keyboard event listener
-
-document.addEventListener("keydown", function(e) {
-
-    var tag = document.activeElement.tagName;
-
-    if (tag == "INPUT" || tag == "TEXTAREA") {
-        return;
+    // ============================
+    // SEARCH (press "/")
+    // ============================
+    if (e.key === "/") {
+      e.preventDefault();
+      const search = document.getElementById("project-search");
+      if (search) search.focus();
     }
 
-    var key = e.key;
-
-    if (key == "d") {
-        toggleDarkMode();
-    } 
-    else if (key == "s") {
-        focusSearch();
-    } 
-    else if (key == "t") {
-        scrollToTop();
-    } 
-    else if (key == "p") {
-        goToProjects();
-    }
-     else if (key == "k") {
-       clearSearch() ;
-    }
- else if (key == "e") {
-     goToExperience()  ;
+    // ============================
+    // THEME TOGGLE (press "t")
+    // ============================
+    if (e.key.toLowerCase() === "t") {
+      const btn = document.getElementById("theme-toggle");
+      if (btn) btn.click();
     }
 
-});
+    // ============================
+    // GO TO PROJECTS (press "p")
+    // ============================
+    if (e.key.toLowerCase() === "p") {
+      const section = document.getElementById("projects");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // ============================
+    // CLOSE MODAL (press ESC)
+    // ============================
+    if (e.key === "Escape") {
+      const modal = document.getElementById("project-modal");
+      if (modal && !modal.classList.contains("hidden")) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+  });
+}

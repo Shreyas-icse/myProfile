@@ -1,27 +1,42 @@
-
 const skillsData = [
   {
-    id: 1,
-    name: "ReactJS",
-    shortLabel: "R",
-    description: "Advanced Hooks, component-based UI, and state management."
+    name: "HTML",
+    level: "Advanced",
+    description: "Semantic structure and accessible markup."
   },
   {
-    id: 2,
-    name: "Tailwind CSS",
-    shortLabel: "T",
-    description: "Responsive layouts, utility-first styling, and clean UI building."
+    name: "CSS",
+    level: "Advanced",
+    description: "Responsive layouts, flexbox, grid, and modern styling."
   },
   {
-    id: 3,
     name: "JavaScript",
-    shortLabel: "J",
-    description: "DOM manipulation, events, validation, Fetch API, and storage."
+    level: "Advanced",
+    description: "DOM manipulation, events, logic, and interactive UI."
   },
   {
-    id: 4,
+    name: "React",
+    level: "Intermediate",
+    description: "Component-based frontend development."
+  },
+  {
+    name: "Node.js",
+    level: "Intermediate",
+    description: "Server-side JavaScript runtime for backend development."
+  },
+  {
+    name: "Express.js",
+    level: "Intermediate",
+    description: "Backend framework for building APIs and web servers."
+  },
+  {
     name: "MongoDB",
-    shortLabel: "M",
-    description: "Document-based database design and backend integration."
+    level: "Intermediate",
+    description: "NoSQL database for storing and managing application data."
+  },
+  {
+    name: "Core Java",
+    level: "Intermediate",
+    description: "Programming fundamentals, OOP, and core language concepts."
   }
 ];

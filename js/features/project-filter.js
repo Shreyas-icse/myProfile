@@ -1,54 +1,63 @@
-function filterProjects(category){
+// ============================
+// PROJECT FILTER FEATURE
+// ============================
 
-    const cards = document.querySelectorAll("#projects-container > div");
+import { renderProjects } from "./project-render.js";
+import { projects } from "../data/projects.js";
 
-    // console.log("Clicked:", category);
-    // console.log("Cards found:", cards.length);
+export function setupFilter() {
+  const buttons = document.querySelectorAll("[data-filter]");
 
-    cards.forEach(function(card){
+  if (!buttons.length) return;
 
-        const cardCategory = card.getAttribute("data-category");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filterValue = btn.getAttribute("data-filter");
 
-        console.log("Card category:", cardCategory);
+      // active button UI
+      buttons.forEach((b) => b.classList.remove("bg-blue-600", "text-white"));
+      btn.classList.add("bg-blue-600", "text-white");
 
-        let show = false;
+      // filter logic
+      if (filterValue === "all") {
+        renderProjects(
+          document.getElementById("projects-container"),
+          projects
+        );
+        return;
+      }
 
-        if(category === "all"){
-            show = true;
-        }
-        else if(category === "app" && cardCategory === "mern"){
-            show = true;
-        }
-        else if(cardCategory === category){
-            show = true;
-        }
+      const filtered = projects.filter((project) =>
+        project.techStack.includes(filterValue)
+      );
 
-         if (show) {
-    card.style.display = "block";
-} else {
-    card.style.display = "none";
-}
+      renderProjects(
+        document.getElementById("projects-container"),
+        filtered
+      );
     });
-}
+  });
+}const filterButtons = document.querySelectorAll(".filter-btn");
 
+filterButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
 
-function initFilterButtons(){
+    const filter = this.getAttribute("data-filter");
 
-    console.log("Init buttons running...");
+    if (filter === "all") {
+      renderProjects(projectsData);
+      return;
+    }
 
-    document.getElementById("filter-all").addEventListener("click", function(){
-        filterProjects("all");
+    const filteredProjects = projectsData.filter((project) => {
+      if (filter === "mern") return project.category === "mern";
+      if (filter === "backend") return project.category === "backend";
+      if (filter === "java") return project.category === "java";
+      return true;
     });
 
-    document.getElementById("filter-web").addEventListener("click", function(){
-        filterProjects("web");
-    });
-
-    document.getElementById("filter-app").addEventListener("click", function(){
-        filterProjects("app");
-    });
-
-    document.getElementById("filter-ai").addEventListener("click", function(){
-        filterProjects("ai");
-    });
-}
+    renderProjects(filteredProjects);
+  });
+});

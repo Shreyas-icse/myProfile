@@ -1,57 +1,26 @@
 const projectsData = [
   {
-    id: 1,
-    name: "Movie Time",
-    category: "MERN",
-    description:
-      "Full stack movie ticket booking application with AI-powered smart movie suggestions.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB"],
-    status: "Live",
-    liveDemo: "#",
-    github: "#"
-  },
-  {
-    id: 2,
-    name: "Gola",
+    title: "Blue Collar Employment Platform",
     category: "mern",
-    description:
-      "Cab booking platform that helps users quickly book rides for daily travel.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB"],
-    status: "Live",
-    liveDemo: "#",
-    github: "#"
+    description: "A MERN-based blue collar employment platform for job seekers and employers with user profiles, job-related workflows, and platform management.",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB"],
+    demoLink: "#",
+    githubLink: "#"
   },
   {
-    id: 3,
-    name: "Portfolio Website",
-    category: "Frontend",
-    description:
-      "Responsive personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "Tailwind CSS", "JavaScript"],
-    status: "Live",
-    liveDemo: "#",
-    github: "#"
+    title: "LinkedIn Clone",
+    category: "backend",
+    description: "A CLI version of a LinkedIn clone built using Node.js, Express.js, and MongoDB to practice backend flow, routing, and data handling.",
+    technologies: ["Node.js", "Express.js", "MongoDB"],
+    demoLink: "#",
+    githubLink: "#"
   },
   {
-    id: 4,
-    name: "Developer Stats Dashboard",
-    category: "web",
-    description:
-      "Dynamic dashboard that loads developer statistics and profile insights using Fetch API.",
-    technologies: ["JavaScript", "Fetch API", "JSON"],
-    status: "Demo",
-    liveDemo: "#",
-    github: "#"
-  },
-   {
-    id: 5,
-    name: "Blue-collar",
-    category: "ai",
-    description:
-      "Find skilled labours",
-    technologies: ["JavaScript", "Fetch API", "JSON"],
-    status: "Demo",
-    liveDemo: "#",
-    github: "#"
+    title: "BookMyShow Clone",
+    category: "backend",
+    description: "A CLI version of a BookMyShow clone built using Node.js, Express.js, and MongoDB for booking logic and database operations.",
+    technologies: ["Node.js", "Express.js", "MongoDB"],
+    demoLink: "#",
+    githubLink: "#"
   }
 ];
