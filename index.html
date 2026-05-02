@@ -33,15 +33,15 @@
   <main>
     <section class="hero section" id="home">
       <div class="hero-content">
-        <p class="subtitle">MERN Stack Developer • Core Java</p>
-        <h1>Hi, I'm <span>Shreyas Kr</span></h1>
+        <p class="subtitle">MERN Stack Developer </p>
+        <h1>Hi, I'm <span id="typing-text"></span></h1>
         <p class="hero-text">
           I build clean, responsive, and modern websites using HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, and Core Java.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn primary-btn">View Projects</a>
-          <a href="#contact" class="btn secondary-btn">Contact Me</a>
-           <a href="Shreyas_Resume.pdf" download="Shreyas_Resume.pdf" class="btn primary-btn">
+          <a href="#contact" class="btn primary-btn">Contact Me</a>
+           <a href="resume krfinal18.pdf" download="resume krfinal18.pdf" class="btn primary-btn">
     Download Resume
   </a>
         </div>
@@ -152,6 +152,15 @@
       <div id="modalBody"></div>
     </div>
   </div>
+   <!-- Add EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <!-- Initialize EmailJS with your Public Key -->
+  <script>
+    (function() {
+      emailjs.init("otF03no6OBCWcGd9F"); // Replace "YOUR_PUBLIC_KEY" with the string you found in your Account/API Keys
+    })();
+  </script>
 
   <script src="js/data/skills.js"></script>
   <script src="js/data/projects.js"></script>
@@ -165,6 +174,7 @@
   <script src="js/features/contact-validation.js"></script>
   <script src="js/features/developer-stats.js"></script>
   <script src="js/features/educationrender.js"></script>
+  <script src="js/features/typing-animation.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

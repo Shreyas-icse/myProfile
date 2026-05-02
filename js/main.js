@@ -24,3 +24,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+// Call project filter setup after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof setupFilter === "function") {
+    setupFilter();
+  }
+});

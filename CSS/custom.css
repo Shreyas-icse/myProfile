@@ -216,16 +216,16 @@ body.dark .header {
 .primary-btn:hover {
   transform: translateY(-2px);
 }
-
 .secondary-btn {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border);
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 
 .secondary-btn:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .hero-image {
@@ -561,6 +561,11 @@ body.dark .header {
 
 .nav-links.show {
   display: flex;
+}
+#typing-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary);
 }
 
 @media (max-width: 992px) {
