@@ -3,7 +3,7 @@ function initTypingEffect() {
     const textElement = document.getElementById("typing-text");
     if (!textElement) return;
 
-    const words = ["Developer", "MERN Stack", "Programmer"];
+    const words = ["Developer", "MERN Stack"];
     let wordIndex = 0;
     let charIndex = 0;
 
